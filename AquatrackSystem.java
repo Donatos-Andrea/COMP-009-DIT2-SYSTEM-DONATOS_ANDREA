@@ -1,6 +1,5 @@
-import java.io.*;
-import java.util.*;
 import java.text.SimpleDateFormat;
+import java.util.*;
 
 class Sale {
     private String customerName;
@@ -37,7 +36,7 @@ class Sale {
 
     @Override
     public String toString() {
-        return "Date: " + date + ", Customer: " + customerName + ", Quantity: " + quantity + ", Price: $" + price + ", Total: $" + getTotal();
+        return "Date: " + date + ", Customer: " + customerName + ", Quantity: " + quantity + ", Price: $" + price + ", Total:  $" + getTotal();
     }
 }
 
@@ -75,7 +74,7 @@ class SalesLedger {
     }
 }
 
-public class Aquatrack {
+public class AquatrackSystem {
     private static SalesLedger ledger = new SalesLedger();
     private static Scanner scanner = new Scanner(System.in);
 
@@ -88,7 +87,7 @@ public class Aquatrack {
             System.out.println("3. Exit");
             System.out.print("Choose an option: ");
             int option = scanner.nextInt();
-            scanner.nextLine();  // Consume newline
+            scanner.nextLine(); 
 
             switch (option) {
                 case 1:
@@ -113,7 +112,7 @@ public class Aquatrack {
         int quantity = scanner.nextInt();
         System.out.print("Enter price per unit: ");
         double price = scanner.nextDouble();
-        scanner.nextLine();  // Consume newline
+        scanner.nextLine(); 
 
         Sale sale = new Sale(customerName, quantity, price);
         ledger.addSale(sale);
